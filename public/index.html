@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEM System – คลังครุภัณฑ์และเครื่องมือแพทย์ โรงพยาบาลมหาวิทยาลัยพะเยา</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- App Shell -->
+  <div id="appShell" class="shell hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brandIcon">🏥</div>
+        <div class="brandText">
+          <div class="brandTitle">MEM System</div>
+          <div class="brandSub">UPH • Medical Equipment</div>
+        </div>
+      </div>
+
+      <div class="userCard">
+        <div class="avatar" id="userAvatar">AD</div>
+        <div class="userMeta">
+          <div class="userName" id="userDisplayName">-</div>
+          <div class="userRole" id="userRole">-</div>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="menuBtn active" data-route="home">
+          <span class="mi">📊</span> Dashboard
+        </button>
+        <button class="menuBtn" data-route="assets">
+          <span class="mi">🗂️</span> รายการครุภัณฑ์
+        </button>
+        <button class="menuBtn" data-route="maintenance">
+          <span class="mi">🛠️</span> แจ้งซ่อม / บำรุงรักษา
+        </button>
+        <button class="menuBtn" data-route="reports">
+          <span class="mi">📄</span> รายงานสรุป
+        </button>
+        <button class="menuBtn" data-route="qrlookup">
+          <span class="mi">🔎</span> เปิดจากรหัส (QR)
+        </button>
+      </nav>
+
+      <div class="sidebarFooter">
+        <button id="btnLogout" class="btn btnPrimary w100">Logout</button>
+        <div class="muted tiny" style="margin-top:10px;">
+          สำหรับเจ้าหน้าที่ที่ได้รับสิทธิ์เท่านั้น
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="pageTitle" id="pageTitle">Dashboard</div>
+          <div class="pageSubtitle" id="pageSubtitle">ภาพรวมการจัดการครุภัณฑ์และเครื่องมือทางการแพทย์</div>
+        </div>
+
+        <div class="topbarRight">
+          <div class="pill" id="dbPill">ฐานข้อมูล: db.json</div>
+        </div>
+      </header>
+
+      <section id="pageContent" class="content"></section>
+    </main>
+  </div>
+
+  <!-- Login -->
+  <div id="loginView" class="loginWrap">
+    <div class="loginCard">
+      <div class="loginHero">
+        <div class="loginLogo">🏥</div>
+        <div class="loginHeading">
+          <div class="loginTitle">เข้าสู่ระบบ</div>
+          <div class="loginSub">MEM System – คลังครุภัณฑ์และเครื่องมือแพทย์ โรงพยาบาลมหาวิทยาลัยพะเยา</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>👤 ชื่อผู้ใช้</label>
+        <input id="loginUsername" type="text" placeholder="เช่น admin" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label>🔐 รหัสผ่าน</label>
+        <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+
+      <button id="btnLogin" class="btn btnPrimary w100" style="height:46px;">เข้าสู่ระบบ</button>
+      <div id="loginError" class="alert error hidden" style="margin-top:12px;"></div>
+
+      <div class="loginHint">
+        บัญชีทดสอบ: <b>admin/admin123</b> หรือ <b>user/user123</b>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

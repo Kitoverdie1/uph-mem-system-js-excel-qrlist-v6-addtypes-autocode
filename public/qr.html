@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ข้อมูลครุภัณฑ์จาก QR • MEM System (UPH)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="qrBody">
+  <div class="qrPage">
+    <div class="qrTop">
+      <div class="qrBrand">
+        <span class="qrIcon">🏥</span>
+        <div>
+          <div class="qrTitle">MEM System (UPH)</div>
+          <div class="qrSub">หน้าข้อมูลครุภัณฑ์จากการสแกน QR</div>
+        </div>
+      </div>
+      <a class="btn btnGhost" href="/">เปิดแอปหลัก</a>
+    </div>
+
+    <div class="card">
+      <div class="cardHeader">
+        <div>
+          <div class="cardTitle">รายละเอียดครุภัณฑ์</div>
+          <div class="cardSub" id="qrCodeCaption">-</div>
+        </div>
+        <div class="row gap8">
+          <button id="btnQrLogin" class="btn btnPrimary">Login เพื่อแก้ไข</button>
+          <a id="btnDownloadQr" class="btn btnGhost" href="#">ดาวน์โหลด QR</a>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <div class="imgBox" id="qrImgBox">
+            <div class="muted">กำลังโหลดรูป…</div>
+          </div>
+        </div>
+        <div>
+          <div class="kv" id="qrKv"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="qrEditCard">
+      <div class="cardHeader">
+        <div>
+          <div class="cardTitle">อัปเดตสถานะแจ้งซ่อม</div>
+          <div class="cardSub">ผู้ใช้ที่เข้าสู่ระบบสามารถอัปเดตสถานะ/หมายเหตุได้ (Admin แก้ได้ทั้งหมด)</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label>สถานะแจ้งซ่อม</label>
+          <select id="qrMaintSelect"></select>
+        </div>
+        <div class="field">
+          <label>วันที่แจ้งซ่อมล่าสุด</label>
+          <input id="qrMaintDate" type="date" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>หมายเหตุการซ่อม</label>
+        <textarea id="qrMaintNote" rows="3" placeholder="ใส่รายละเอียด/อาการ/การติดตาม"></textarea>
+      </div>
+
+      <div class="row gap8" style="justify-content:flex-end;">
+        <button id="btnQrSave" class="btn btnPrimary">บันทึก</button>
+      </div>
+
+      <div id="qrSaveMsg" class="alert success hidden" style="margin-top:12px;"></div>
+      <div id="qrSaveErr" class="alert error hidden" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="tiny muted" style="text-align:center; margin-top:16px;">
+      ใช้ข้อมูลจากฐานข้อมูลเดียวกับแอปหลัก (db.json)
+    </div>
+  </div>
+
+  <script src="/js/qr.js"></script>
+</body>
+</html>
